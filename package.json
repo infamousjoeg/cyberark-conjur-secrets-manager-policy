@@ -1,0 +1,25 @@
+{
+  "name": "cyberark-conjur-secrets-manager-policy",
+  "displayName": "CyberArk Conjur Secrets Manager Policy",
+  "description": "This is a generic description for now.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "maml",
+      "aliases": ["MAML", "maml"],
+      "extensions": [".maml"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "maml",
+      "scopeName": "source.maml",
+      "path": "./syntaxes/maml.tmLanguage.json"
+    }]
+  }
+}

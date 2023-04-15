@@ -1,0 +1,82 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "maml",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#resources"
+		},
+		{
+			"include": "#anchor"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"match": "^---",
+			"name": "entity.other.document.begins.maml"
+		},
+		{
+			"match": "^\\.{3}",
+			"name": "entity.other.document.end.maml"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.yaml",
+					"match": "#.*$"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.operator.yaml",
+					"match": "\\b(id|annotations|owner|body)\\b(?=:)"
+				},
+				{
+					"name": "keyword.control.maml",
+					"match": "\\w*(?=:)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.yaml",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.yaml",
+					"match": "\\\\."
+				}
+			]
+		},
+		"resources": {
+			"patterns": [
+				{
+					"name": "entity.name.function.host.maml",
+					"match": "(?<=-\\s)!(\\bhost\\b|\\bvariable\\b|\\bpolicy\\b|\\bgrant\\b|\\bpermit\\b|\\bgroup\\b|\\buser\\b)"
+				}
+			]
+		},
+		"anchor": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.anchor.maml",
+					"match": "(?<=-\\s)&.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.maml"
+}

@@ -1,0 +1,12 @@
+---
+- !host
+
+  - !host
+
+- !host test
+
+- !host
+  id: test
+
+- &hosts
+  - !host
